@@ -77,8 +77,7 @@ function initializeSnake(length) {
   let x = width/2;
   let y = height/2;
   for (let i = 0; i < length; i++) {
-    snake.push({ x: x, y: y });
-    x -= 1;
+    snake.push({ x: x - i, y: y });
   }
 
   return snake;
