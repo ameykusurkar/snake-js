@@ -22,7 +22,7 @@ function restart() {
   snake = initializeSnake(1);
   food = createFood();
   score = 0;
-  document.getElementById("score").innerHTML = "Score: " + score; 
+  document.getElementById("score").innerHTML = "Score: " + score;
 }
 
 function game() {
@@ -33,8 +33,15 @@ function game() {
   renderSnake();
 
   let head = snake[0];
+
+  for (let s = 1; s < snake.length; s++) {
+    if (head.x === snake[s].x && head.y === snake[s].y) {
+      restart();
+    }
+  }
+
   if (head.x === food.x && head.y === food.y) {
-    document.getElementById("score").innerHTML = "Score: " + ++score; 
+    document.getElementById("score").innerHTML = "Score: " + ++score;
     food = createFood();
     moveSnake(true);
   } else {
