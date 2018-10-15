@@ -26,7 +26,7 @@ function restart() {
 }
 
 function game() {
-  ctx.fillStyle = "white";
+  ctx.fillStyle = "#e1e1e1";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   renderFood();
@@ -52,15 +52,15 @@ function game() {
 function renderSnake() {
   for (let i = 0; i < snake.length; i++) {
     if (snake[i].x === food.x && snake[i].y === food.y) {
-      renderTile(snake[i], "#800000");
+      renderTile(snake[i], "#cc6666");
     } else {
-      renderTile(snake[i], "black");
+      renderTile(snake[i], "#999999");
     }
   }
 }
 
 function renderFood() {
-  renderTile(food, "red");
+  renderTile(food, "#cc6666");
 }
 
 function renderTile(pos, color) {
